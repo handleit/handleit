@@ -1,136 +1,72 @@
+- content_for :title, "HandleIT"
 .top-bar
   .top-bar-left
     ul.menu
-      li.menu-text
-        | Yeti Agency
-      li
-        a[href="#"]
-          | One
-      li
-        a[href="#"]
-          | Two
-  .top-bar-right
-    ul.menu
-      li
-        a[href="#"]
-          | Three
-      li
-        a[href="#"]
-          | Four
-      li
-        a[href="#"]
-          | Five
-      li
-        a[href="#"]
-          | Six
+      li.menu-text HandleIT
+      li building the next generation of online applications
+  .menu-text.top-logo= image_tag "icon.png"
 .callout.large
   .row.column.text-center
-    h1
-      | Changing the World Through Design
-    p.lead
-      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.
-    a.button.large[href="#"]
-      | Learn More
-    a.button.large.hollow[href="#"]
-      | Learn Less
+    h1 Yes, this really is our entire website
+    p.lead We're too busy building cool apps for our clients
+
+    .more-and-less
+      a.button.large[href="#clients"] Our Clients
+      a.button.large[href="#team"] Our Team
+      .button.large.hollow= contact_us
 .row
   .medium-6.columns.medium-push-6
-    img.thumbnail[src="http://placehold.it/750x350"]
+    .thumbnail= link_to image_tag("code.jpg", size: "750x350", alt: "Codez!"), "https://github.com/handleit"
   .medium-6.columns.medium-pull-6
-    h2
-      | Our Agency, our selves.
-    p
-      | Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor.
+    h2 How we can help you
+    p Our engineers have been crushing it for over 20 years and we have an amazing track record of successfully delivering high quality software, products and solutions.
+    p Whether you have a project that you need extra hands on, a product or idea that you need help bringing to market, or some dirty work that you never seem to have time for, #{link_to "we can help", contact_us_uri}.
 .row
   .medium-4.columns
-    h3
-      | Photoshop
-    p
-      | Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna.
+    h3 Server Side
+    p Our main weapon of choice on the server is Ruby, using Rails, Rodakase, Sinatra, Trailblazer or whatever framework best fits the project, we have experts in all major DBs, full text indexers, queuing systems, etc.. We can also assist with various other technologies including PHP, Node.js, Perl, etc., please ask.
   .medium-4.columns
-    h3
-      | Javascript
-    p
-      | Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna.
+    h3 Client Side
+    p From design, graphics, icons, branding through to Javascript, WebSockets, AJAX/PJAX, PouchDB and everything in between, we have your front-end requirements covered. We also will work with any and all JS frameworks: jQuery, Backbone, Ember, React, Angular, Knockout, etc..
   .medium-4.columns
-    h3
-      | Marketing
-    p
-      | Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna.
+    h3 Everything Else
+    p Anything that we haven't already mentioned, we can do too, so if in doubt just #{link_to "contact us", contact_us_uri} and we'll have a chat.
+
+= back_to_top
 hr
-.row.column
-  ul.vertical.medium-horizontal.menu.expanded.text-center
-    li
-      a[href="#"]
-      .stat
-        | 28
-      span
-        | Websites
-    li
-      a[href="#"]
-      .stat
-        | 43
-      span
-        | Apps
-    li
-      a[href="#"]
-      .stat
-        | 95
-      span
-        | Ads
-    li
-      a[href="#"]
-      .stat
-        | 59
-      span
-        | Cakes
-    li
-      a[href="#"]
-      .stat
-        | 18
-      span
-        | Logos
+
+#clients
+  .row.column
+    h3 Our Clients
+  .row.medium-up-5.large-up-6
+    - clients.each do |client|
+      .column.client
+        = link_to image_tag( client.image_uri, alt: client.name, class: "dim"), client.url
+
+= back_to_top
 hr
-.row.column
-  h3
-    | Our Recent Work
-.row.medium-up-3.large-up-4
-  .column
-    img.thumbnail[src="http://placehold.it/550x550"]
-  .column
-    img.thumbnail[src="http://placehold.it/550x550"]
-  .column
-    img.thumbnail[src="http://placehold.it/550x550"]
-  .column
-    img.thumbnail[src="http://placehold.it/550x550"]
-  .column
-    img.thumbnail[src="http://placehold.it/550x550"]
-  .column
-    img.thumbnail[src="http://placehold.it/550x550"]
-  .column
-    img.thumbnail[src="http://placehold.it/550x550"]
-  .column
-    img.thumbnail[src="http://placehold.it/550x550"]
-  .column
-    img.thumbnail[src="http://placehold.it/550x550"]
-  .column
-    img.thumbnail[src="http://placehold.it/550x550"]
-  .column
-    img.thumbnail[src="http://placehold.it/550x550"]
-  .column
-    img.thumbnail[src="http://placehold.it/550x550"]
+
+#team
+  .row.column
+    h3 Our Team
+  .row.medium-up-3.large-up-4
+    - team_members.each do |member|
+      .column
+        .thumbnail
+          - if member.github?
+            = link_to image_tag(member.avatar, alt: member.name, size: "550x550"), member.url
+          - else
+            = image_tag(member.avatar, alt: member.name, size: "550x550")
+  /  
+    .column
+      .thumbnail= link_to image_tag("http://placehold.it/550x550/f60/000?text=We're+Hiring", alt: "We're Hiring"), "mailto:jobs@handle.it?subject=Sign+me+up+Scotty!"
+
+= back_to_top
 hr
-.row.column
-  ul.menu
-    li
-      a[href="#"]
-        | One
-    li
-      a[href="#"]
-        | Two
-    li
-      a[href="#"]
-        | Three
-    li
-      a[href="#"]
-        | Four
+
+.footer.row
+  .small-1.columns
+    = link_to image_tag("https://i.creativecommons.org/l/by-sa/4.0/88x31.png", alt: "Creative Commons Attribution-ShareAlike 4.0 International License"), "http://creativecommons.org/licenses/by-sa/4.0/", rel: "license"
+  .small-11.columns.end
+    ul.menu.float-right
+      li= contact_us

@@ -1,0 +1,36 @@
+.more-and-less .button {
+  margin: 1ex;
+}
+
+img.dim {
+  padding: 2ex;
+  text-align: center;
+
+  filter: gray; /* IE6-9 */
+  filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+
+  opacity: 0.4;
+  filter: alpha(opacity=40); /* msie */
+
+  transition: all 0.2s linear;
+
+  &:hover {
+    filter: none;
+    opacity: 1;
+  }
+}
+
+.top-logo img {
+  float: right;
+}
+
+.footer {
+  margin-bottom: 1em;
+}
+
+.back-to-top {
+  float: right;
+  font-weight: bold;
+  font-size: 150%;
+  margin-bottom: -1em;
+}

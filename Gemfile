@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'responders'
 gem 'foundation-rails'
 gem 'rabl-rails'
+gem "autoprefixer-rails"
 
 group :development, :test do
   gem 'byebug'
@@ -45,4 +46,5 @@ group :development do
   gem 'simplecov'
   gem 'pry-rails'
   gem 'better_errors'
+  gem 'binding_of_caller'
 end

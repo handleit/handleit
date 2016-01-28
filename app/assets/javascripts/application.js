@@ -16,4 +16,13 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){
+  $(document).foundation();
+
+  $("img[alt]").not("[title]").each( function() {
+    var e = $(this);
+    e.attr("title", e.attr("alt"));
+  });
+
+  $("a[href^=http]").attr("target", "_blank");
+});
