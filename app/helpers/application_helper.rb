@@ -29,7 +29,7 @@ module ApplicationHelper
   def team_members
     [
       TeamMember.new( nick:"acook",      name:"Anthony Cook"                          ),
-      TeamMember.new( nick:"dannyg",     name:"Danny Govea",          github:false    ),
+      TeamMember.new( nick:"andrewwolf", name:"Andrew Wolf",          github:false    ),
       TeamMember.new( nick:"davidvii",   name:"David Becerra",        extension:"png" ),
       TeamMember.new( nick:"epochwolf",  name:"Brad Majewski"                         ),
       TeamMember.new( nick:"firedev",    name:"Nick Ostrovsky"                        ),
