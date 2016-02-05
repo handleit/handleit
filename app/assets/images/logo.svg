@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-  <g>
-    <rect x="75" y="0" width="225" height="75" fill="#A02C2C"/>
-    <rect x="150" y="75" width="75" height="225" fill="#A02C2C"/>
+  <g fill="#A02C2C">
+    <rect x="75" y="0" width="225" height="75"/>
+    <rect x="150" y="75" width="75" height="225"/>
   </g>
 
-  <g>
-    <rect x="0" y="0" width="75" height="300" fill="#D35F5F"/>
-    <polygon points="75,0 150,0 75,75" fill="#D35F5F"/>
+  <g fill="#D35F5F">
+    <rect x="0" y="0" width="75" height="300"/>
+    <polygon points="75,0 150,0 75,75"/>
   </g>
 </svg>
