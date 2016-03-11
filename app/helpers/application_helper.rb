@@ -36,7 +36,6 @@ module ApplicationHelper
       TeamMember.new( nick:"mrbongiolo", name:"Ralf Schmitz Bongiolo"                 ),
       TeamMember.new( nick:"rhizome",    name:"Eric Hill"                             ),
       TeamMember.new( nick:"rthbound",   name:"Ryan T. Hosford"                       ),
-      TeamMember.new( nick:"rubenrails", name:"Ruben Ascencio"                        ),
       TeamMember.new( nick:"smathy",     name:"Jason King"                            ),
       TeamMember.new( nick:"solnic",     name:"Piotr Solnica"                         ),
       TeamMember.new( nick:"tubbo",      name:"Tom Scott"                             ),
